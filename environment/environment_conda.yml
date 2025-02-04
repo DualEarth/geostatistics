@@ -1,0 +1,34 @@
+name: geostats_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Core Python
+  - python=3.10  # Adjust version as needed
+  
+  # Geospatial Libraries
+  - geopandas  # Reads shapefiles, handles geospatial data
+  - rasterio  # Work with raster data
+  - shapely  # Geometry operations for vector data
+  - fiona  # Handles shapefile reading/writing
+  - pyproj  # Coordinate reference system transformations
+
+  # Geostatistics
+  - pykrige  # Kriging methods for spatial interpolation
+  - gstools  # Geostatistical modeling and variogram estimation
+  - scikit-learn  # Machine learning methods, including spatial interpolation
+  - scipy  # Optimization, numerical methods
+  
+  # Visualization
+  - matplotlib  # Standard plotting library
+  - seaborn  # Statistical data visualization
+  - folium  # Interactive maps (if needed)
+  
+  # Scientific Computing & Data Analysis
+  - numpy  # Core numerical computing
+  - pandas  # Data handling
+  - xarray  # For handling multi-dimensional geospatial data
+  
+  # Jupyter for interactive workflows
+  - jupyterlab  # Interactive notebooks
+  - ipython  # Enhanced Python shell

@@ -6,7 +6,7 @@ import pandas as pd
 
 np.random.seed(3)  # Set a random seed for reproducibility
 
-def idw_interpolation(obs_coords, obs_values, target_coords, power=1):
+def idw_interpolation(obs_coords, obs_values, target_coords, power=8):
     """ Perform IDW interpolation. """
     dists = distance_matrix(target_coords, obs_coords)
     dists[dists == 0] = 1e-10
@@ -130,6 +130,7 @@ def linear_semivariogram(h, slope=1, nugget=0):
     """
     return nugget + slope * h
 
+## Generate a mesh to make predictions
 x = np.linspace(0, 10, 100)
 y = np.linspace(0, 10, 100)
 xx, yy = np.meshgrid(x, y)
@@ -153,7 +154,7 @@ unobs_idw = idw_interpolation(obs_coords, obs_values, unobserved_point)
 unobs_kriging = kriging(obs_coords, obs_values, unobserved_point, linear_semivariogram)
 
 # Assuming the known mean is the average of the observed values
-known_mean = np.mean(obs_values)
+#known_mean = np.mean(obs_values)
 # Perform Simple Kriging
 simple_kriging_values = simple_kriging(obs_coords, obs_values, target_coords, [i for i in range(4)])
 unobs_simple_kriging_values = simple_kriging(obs_coords, obs_values, unobserved_point, [i for i in range(4)])
