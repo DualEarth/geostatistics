@@ -19,8 +19,13 @@ conda activate geostats_env
 
 ## Data Source
 
+### 
+This website has 3,425 datasets to look through: [https://catalog.data.gov/dataset?tags=geology](https://catalog.data.gov/dataset?tags=geology)!, many of which would be good for geostatistics examples.
+
+### Data for examples
 - **Kentucky Oil & Gas Production**  
-- USGS Dataset: https://www.sciencebase.gov/catalog/item/664b5d86d34e1955f5a47206  
+- USGS Dataset: [https://www.sciencebase.gov/catalog/item/664b5d86d34e1955f5a47206](https://www.sciencebase.gov/catalog/item/664b5d86d34e1955f5a47206)!
+
 
 ## License
 
