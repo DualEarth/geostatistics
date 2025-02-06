@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Kriging: Ordinary, Simple, and Universal}
+\author{}
+\date{}
+\maketitle
+
+\section{Introduction}
+
+Kriging is a geostatistical interpolation technique that provides the best linear unbiased estimate (BLUE) of an unknown spatial variable based on weighted combinations of observed data points. Kriging methods differ primarily in their treatment of the mean structure of the data. 
+
+\section{Ordinary Kriging (OK)}
+
+Ordinary Kriging assumes that the mean of the process is unknown but constant within the local neighborhood. The estimated value at an unsampled location \( x_0 \) is given by:
+
+\begin{equation}
+    Z^*(x_0) = \sum_{\alpha=1}^{n} \lambda_{\alpha} Z(x_{\alpha})
+\end{equation}
+
+where:
+\begin{itemize}
+    \item \( Z^*(x_0) \) is the kriging estimate at location \( x_0 \),
+    \item \( Z(x_{\alpha}) \) are the observed values at known locations \( x_{\alpha} \),
+    \item \( \lambda_{\alpha} \) are the kriging weights,
+    \item \( n \) is the number of known points used in the interpolation.
+\end{itemize}
+
+The weights \( \lambda_{\alpha} \) are computed by solving a system of linear equations derived from the semivariogram model. The unbiasedness constraint ensures that:
+
+\begin{equation}
+    \sum_{\alpha=1}^{n} \lambda_{\alpha} = 1.
+\end{equation}
+
+Predictions from Ordinary Kriging are weighted averages of known values and generally stay within the range of observed data. However, in areas of high spatial variability, kriging might slightly overshoot or undershoot due to the influence of surrounding points.
+
+\section{Simple Kriging (SK)}
+
+Simple Kriging assumes that the mean \( m \) is known and constant throughout the entire domain. The kriging estimator takes the form:
+
+\begin{equation}
+    Z^*(x_0) = m + \sum_{\alpha=1}^{n} \lambda_{\alpha} (Z(x_{\alpha}) - m).
+\end{equation}
+
+Since the mean is explicitly known, the kriging weights are computed without the need for a Lagrange multiplier to enforce the unbiasedness constraint. Simple Kriging uses a known global mean as part of the prediction. It is mathematically possible for SK to predict values outside the observed range, depending on how the weights sum.
+
+\section{Universal Kriging (UK)}
+
+Universal Kriging extends the ordinary kriging approach by allowing for a spatially varying mean, typically modeled as a polynomial function:
+
+\begin{equation}
+    m(x) = \sum_{j=0}^{p} \beta_j f_j(x),
+\end{equation}
+
+where \( \beta_j \) are coefficients to be estimated and \( f_j(x) \) are known basis functions (e.g., linear or quadratic functions of location coordinates). The universal kriging estimate is:
+
+\begin{equation}
+    Z^*(x_0) = \sum_{\alpha=1}^{n} \lambda_{\alpha} Z(x_{\alpha}) + \sum_{j=0}^{p} \mu_j f_j(x_0).
+\end{equation}
+
+Universal Kriging attempts to account for trends in the data, so predictions can go beyond observed values if the underlying model suggests a trend (e.g., increasing over distance).
+
+\section{Predictive Capability of Kriging Models}
+
+Kriging provides an estimate that is a weighted sum of observed values. This means that predictions tend to fall within the range of observed values, but they can occasionally exceed or fall below them. This behavior depends on the spatial correlation structure captured by the semivariogram. In regions with strong autocorrelation, the predictions are more constrained, whereas in regions with weak autocorrelation or extrapolation beyond known points, kriging predictions may exhibit greater uncertainty.
+
+Additionally, the kriging variance provides a measure of uncertainty, which increases as the prediction location moves farther from known data points. This allows for an assessment of confidence in the predicted values and helps in making informed decisions regarding additional sampling.
+
+\end{document}

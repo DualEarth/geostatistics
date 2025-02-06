@@ -1,0 +1,157 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\title{What is a Model?}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Types of Models}
+
+\subsection{Physical Lab Model}
+\textbf{Description:} A tangible, scaled representation of a real-world system used for experimental testing. Examples include flume experiments for river hydraulics and wind tunnel tests for aerodynamics.
+
+\subsection{Interpretive Model}
+\textbf{Description:} A framework used to explain or assign meaning to observed phenomena. Example: A geological interpretation of past climate conditions from sediment cores.
+
+\subsection{Perceptual Model}
+\textbf{Description:} A mental model or intuitive framework that influences how scientists or practitioners interpret data and processes.
+
+
+
+\subsection{Statistical Model}
+\textbf{Description:} A probabilistic framework describing relationships between variables, incorporating uncertainty.
+
+\[
+P(Y | X) = \frac{P(X | Y) P(Y)}{P(X)}
+\]
+
+Kriging, for example:
+
+
+\subsection{Empirical Model}
+\textbf{Description:} A model based purely on observed data rather than first principles. Often expressed as a fitted function.
+
+\[
+y = ax + b
+\]
+
+variogram models, for example
+
+
+\subsection{Machine Learning Model}
+\textbf{Description:} A flexible data-driven model that learns patterns from data, often using neural networks or decision trees.
+
+\[
+\hat{y} = f(X; \theta)
+\]
+
+\subsection{Conceptual Model}
+\textbf{Description:} A simplified, qualitative representation of a system, often expressed as flowcharts or box-and-arrow diagrams. Example: The water cycle model.
+
+\textbf{Linear Reservoir Model:} A simple conceptual hydrologic model where the outflow \( Q \) is proportional to the storage \( S \):
+
+\[
+\frac{dS}{dt} = I - Q
+\]
+
+where:
+- \( S \) is the storage in the reservoir (e.g., groundwater, lake, or soil moisture).
+- \( I \) is the inflow (e.g., precipitation, recharge).
+- \( Q \) is the outflow, assumed proportional to storage: 
+
+\[
+Q = \frac{S}{K}
+\]
+
+where \( K \) is the reservoir **response time** (a storage coefficient with units of time).
+
+\textbf{Discrete Solution:} Using **forward Euler approximation**:
+
+\[
+S^{n+1} = S^n + \Delta t (I^n - Q^n)
+\]
+
+Substituting \( Q^n = S^n / K \):
+
+\[
+S^{n+1} = S^n + \Delta t \left( I^n - \frac{S^n}{K} \right)
+\]
+
+\textbf{Outflow Update:}
+
+\[
+Q^{n+1} = \frac{S^{n+1}}{K}
+\]
+
+where:
+- \( S^n \) is storage at time step \( n \).
+- \( Q^n \) is outflow at time step \( n \).
+- \( \Delta t \) is the time step.
+
+This equation provides a simple way to track how water moves through a storage unit (e.g., watershed, aquifer) using time-stepping.
+
+\subsection{Physical Model (PDE-Based)}
+\textbf{Description:} A computational simulation using physical laws, often represented as partial differential equations (PDEs). Used in climate models, fluid dynamics, and geophysics.
+
+\[
+\frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial x^2}
+\]
+
+where:
+- \( u(x,t) \) is the temperature at position \( x \) and time \( t \).
+- \( \alpha \) is the thermal diffusivity.
+
+\subsection{Physical Computer Model (PDE-Based)}
+\textbf{Description:} A computational simulation using physical laws, often represented as partial differential equations (PDEs). Used in climate models, fluid dynamics, and geophysics.
+
+\[
+\frac{u_i^{n+1} - u_i^n}{\Delta t} = \alpha \frac{u_{i+1}^n - 2u_i^n + u_{i-1}^n}{\Delta x^2}
+\]
+
+\textbf{Solution Update:} Solving for \( u_i^{n+1} \):
+
+\[
+u_i^{n+1} = u_i^n + \frac{\alpha \Delta t}{\Delta x^2} \left( u_{i+1}^n - 2u_i^n + u_{i-1}^n \right)
+\]
+
+where:
+- \( u_i^n \) is the temperature at grid point \( i \) and time step \( n \).
+- \( \Delta t \) is the time step size.
+- \( \Delta x \) is the spatial step size.
+
+
+
+\section{What Are Models Used For?}
+
+\subsection{Reconstructing the Past (Hindcasts)}
+\textbf{Example:} Using tree rings to infer past climate conditions.
+
+\subsection{Understanding the Present (Nowcasts)}
+\textbf{Example:} Real-time flood models predicting river discharge.
+
+\subsection{Predicting the Future (Forecasts)}
+\textbf{Example:} Weather forecasting using atmospheric models.
+
+\subsection{Interpolating (Filling in the Gaps)}
+\textbf{Example:} Using kriging to estimate missing spatial data.
+
+\subsection{Extrapolating to Unknown Events}
+\textbf{Example:} Projecting sea level rise based on ice sheet dynamics.
+
+\subsection{Understanding the Physical World}
+\textbf{Example:} Modeling plate tectonics to understand earthquake hazards.
+
+\subsection{Analyzing Counterfactuals}
+\textbf{Example:} Simulating the impact of removing a dam on river flow.
+
+\subsection{Attributing Influence from Variables, Events, or Forcings}
+\textbf{Example:} Determining the role of CO$_2$ in historical climate change.
+
+\subsection{Identifying Causal Relationships}
+\textbf{Example:} Using statistical inference to assess how deforestation affects local precipitation.
+
+\end{document}
