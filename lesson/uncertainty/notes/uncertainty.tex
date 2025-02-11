@@ -1,0 +1,152 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, graphicx}
+
+\title{Deterministic vs. Stochastic Modeling of Uncertainty}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+This document presents a mathematical breakdown of uncertainty in regression modeling. We analyze uncertainty in:
+\begin{itemize}
+    \item \textbf{Input data} (\textit{epistemic uncertainty}) – unknown measurement errors.
+    \item \textbf{Model structure} (\textit{epistemic uncertainty}) – choice of linear regression.
+    \item \textbf{Parameter estimation} (\textit{epistemic uncertainty}) – coefficients are estimated from finite samples.
+    \item \textbf{Target data (response variability)} (\textit{aleatory uncertainty}) – inherent randomness in outcomes.
+    \item \textbf{Intrinsic randomness} (\textit{aleatory uncertainty}) – stochastic noise added to the system.
+\end{itemize}
+
+\section{Synthetic Data Generation}
+
+We generate synthetic data for a multivariate regression model with **known** uncertainty in input data, model structure, parameters, target data, and intrinsic randomness. We assume the true relationship follows a linear model with log-normal distributions for strictly positive data:
+\begin{equation}
+    X_i \sim \text{LogNormal}(\mu_X, \sigma_X^2), \quad i = 1, \dots, N
+\end{equation}
+\begin{equation}
+    \beta_0, \beta_1 \sim \text{Normal}(\mu_\beta, \sigma_\beta^2)
+\end{equation}
+\begin{equation}
+    \epsilon_i \sim \mathcal{N}(0, \sigma_\epsilon^2) \quad \text{(aleatory uncertainty)}
+\end{equation}
+The true response is given by:
+\begin{equation}
+    Y_i = \beta_0 + \beta_1 X_i + \epsilon_i
+\end{equation}
+where \( \epsilon_i \) represents the irreducible noise in the system (aleatory uncertainty).
+
+
+\subsection{Generating Predictor Variables}
+We define two independent predictor variables $X_1$ and $X_2$, sampled from log-normal distributions:
+\begin{align}
+    X_1 &\sim \text{LogNormal}(\mu_1, \sigma_1) \\
+    X_2 &\sim \text{LogNormal}(\mu_2, \sigma_2)
+\end{align}
+where $\mu_1 = 1$, $\sigma_1 = 0.2$, and $\mu_2 = 1.5$, $\sigma_2 = 0.3$.
+
+\subsection{True Model with Known Parameters}
+The true response variable $Y$ follows:
+\begin{align}
+    Y = \exp \left( \beta_0 + \beta_1 \log X_1 + \beta_2 \log X_2 \right) \cdot \epsilon
+\end{align}
+where:
+\begin{itemize}
+    \item $\beta_0 \sim \mathcal{N}(2, 0.5)$ is the intercept,
+    \item $\beta_1 \sim \mathcal{N}(1.2, 0.2)$ and $\beta_2 \sim \mathcal{N}(-0.8, 0.15)$ are regression coefficients,
+    \item $\epsilon \sim \text{LogNormal}(0, 0.1)$ is the multiplicative noise.
+\end{itemize}
+
+\section{Deterministic Model}
+We fit a **deterministic** linear regression model to the log-transformed data:
+\begin{align}
+    \log Y = \alpha_0 + \alpha_1 \log X_1 + \alpha_2 \log X_2 + \epsilon
+\end{align}
+where $\alpha_i$ are estimated via **ordinary least squares (OLS)**:
+\begin{align}
+    \hat{\boldsymbol{\alpha}} = (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathbf{y}
+\end{align}
+where $\mathbf{X}$ is the design matrix and $\mathbf{y}$ is the vector of observed values $\log Y$.
+
+\subsection{Deterministic Predictions}
+\begin{align}
+    \hat{Y}_{\text{det}} = \exp (\hat{\alpha}_0 + \hat{\alpha}_1 \log X_1 + \hat{\alpha}_2 \log X_2)
+\end{align}
+
+\subsection{Coefficient of Determination (R²)}
+The goodness of fit for the deterministic model is given by:
+\begin{align}
+    R^2_{\text{det}} = 1 - \frac{\sum_{i=1}^{n} (Y_i - \hat{Y}_{\text{det}, i})^2}{\sum_{i=1}^{n} (Y_i - \bar{Y})^2}
+\end{align}
+
+\section{Stochastic Ensemble Model}
+To incorporate uncertainty, we generate **multiple simulations** of the model using Monte Carlo sampling.
+
+\subsection{Monte Carlo Sampling}
+For each realization $k = 1, \dots, L$:
+\begin{align}
+    X_1^{(k)} &\sim \text{LogNormal}(\log X_1, 0.1) \\
+    X_2^{(k)} &\sim \text{LogNormal}(\log X_2, 0.15)
+\end{align}
+The regression parameters are also sampled:
+\begin{align}
+    \beta_0^{(k)} &\sim \mathcal{N}(\hat{\alpha}_0, 0.3) \\
+    \beta_1^{(k)} &\sim \mathcal{N}(\hat{\alpha}_1, 0.1) \\
+    \beta_2^{(k)} &\sim \mathcal{N}(\hat{\alpha}_2, 0.1)
+\end{align}
+Each realization of $Y$ is computed as:
+\begin{align}
+    Y_{\text{sim}}^{(k)} = \exp (\beta_0^{(k)} + \beta_1^{(k)} \log X_1^{(k)} + \beta_2^{(k)} \log X_2^{(k)})
+\end{align}
+with additional stochastic noise:
+\begin{align}
+    Y_{\text{sim}}^{(k)} = Y_{\text{sim}}^{(k)} \cdot \text{LogNormal}(0, 0.1)
+\end{align}
+
+\subsection{Ensemble Mean Prediction}
+The final stochastic model prediction is computed as the **mean across all simulations**:
+\begin{align}
+    \hat{Y}_{\text{stoch}} = \frac{1}{L} \sum_{k=1}^{L} Y_{\text{sim}}^{(k)}
+\end{align}
+
+\subsection{Stochastic Model R²}
+The coefficient of determination for the ensemble model is computed as:
+\begin{align}
+    R^2_{\text{stoch}} = \left[ \frac{\text{Cov}(\log Y, \log \hat{Y}_{\text{stoch}})}{\sigma_Y \sigma_{\hat{Y}_{\text{stoch}}}} \right]^2
+\end{align}
+
+\section{Visualization and Comparison}
+We generate three plots to compare results:
+
+\subsection{Plot 1: Deterministic Model}
+A scatter plot of observed vs. deterministic predictions:
+\[
+\log Y_{\text{true}} \text{ vs. } \log \hat{Y}_{\text{det}}
+\]
+with a regression line.
+
+\subsection{Plot 2: Stochastic Ensemble Model}
+A scatter plot of observed vs. ensemble predictions:
+\[
+\log Y_{\text{true}} \text{ vs. } \log \hat{Y}_{\text{stoch}}
+\]
+with uncertainty bands (confidence intervals from simulations).
+
+\subsection{Plot 3: Comparison of Deterministic vs. Stochastic}
+Both deterministic and stochastic predictions are plotted together:
+\begin{itemize}
+    \item **Blue Line:** Deterministic best-fit regression
+    \item **Red Line:** Stochastic ensemble mean regression
+\end{itemize}
+R² values are displayed for both models.
+
+\section{Conclusion}
+\begin{itemize}
+    \item The **deterministic model** provides a single best-fit prediction but does not account for **uncertainty** in inputs, parameters, or observations.
+    \item The **stochastic model** provides a distribution of possible predictions, yielding a more robust estimate of the true system.
+    \item The **ensemble mean prediction** can be more accurate when uncertainty is properly modeled.
+    \item **Key Insight:** Stochastic modeling provides a **realistic representation of uncertainty** compared to a single deterministic best-fit.
+\end{itemize}
+
+\end{document}
