@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+	<idinfo>
+		<citation>
+			<citeinfo>
+				<origin>Kentucky Geological Survey</origin>
+				<pubdate>1999</pubdate>
+				<title>Coal Exploration in Kentucky</title>
+				<geoform Sync="TRUE">vector digital data</geoform>
+				<pubinfo>
+					<pubplace>Lexington, KY</pubplace>
+					<publish>Kentucky Geological Survey</publish>
+				</pubinfo>
+				<onlink>http://kgsweb.uky.edu/download/state/kycoal.ZIP</onlink>
+				<lworkcit>
+					<citeinfo>
+						<pubinfo>
+							<pubplace>Lexington, KY</pubplace>
+							<publish>Kentucky Geological Survey</publish>
+						</pubinfo>
+					</citeinfo>
+				</lworkcit>
+				<ftname Sync="TRUE">coaldrillholesdd</ftname></citeinfo>
+		</citation>
+		<descript>
+			<abstract>Coal Exploration Drill Holes--location and stratigraphic range</abstract>
+			<purpose>Provide basic information on coal exploration in Kentucky</purpose>
+			<langdata Sync="TRUE">en</langdata></descript>
+		<timeperd>
+			<timeinfo>
+				<sngdate>
+					<caldate>1999</caldate>
+				</sngdate>
+			</timeinfo>
+			<current>publication date</current>
+		</timeperd>
+		<status>
+			<progress>In work</progress>
+			<update>As needed</update>
+		</status>
+		<spdom>
+			<bounding>
+				<westbc Sync="TRUE">-88.161561</westbc>
+				<eastbc Sync="TRUE">-82.063184</eastbc>
+				<northbc Sync="TRUE">38.511040</northbc>
+				<southbc Sync="TRUE">36.504736</southbc>
+			</bounding>
+			<lboundng><leftbc Sync="TRUE">-88.161561</leftbc><rightbc Sync="TRUE">-82.063184</rightbc><bottombc Sync="TRUE">36.504736</bottombc><topbc Sync="TRUE">38.511040</topbc></lboundng></spdom>
+		<keywords>
+			<theme>
+				<themekt>ArcIMS Keyword Thesaurus</themekt>
+				<themekey>geoscientificInformation</themekey>
+				<themekey>coal</themekey>
+				<themekey>economy</themekey>
+				<themekey>energy</themekey>
+				<themekey>exploration</themekey>
+			</theme>
+			<place>
+				<placekey>Kentucky</placekey>
+			</place>
+		</keywords>
+		<accconst>None</accconst>
+		<useconst>None</useconst>
+		<ptcontac>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>Kentucky Geological Survey</cntorg>
+					<cntper>Jerry Weisenfluh</cntper>
+				</cntorgp>
+				<cntpos>Head, Geospatial Analysis Section</cntpos>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>Kentucky Geological Survey</address>
+					<address>228 Mining and Mineral Resources Building</address>
+					<address>University of Kentucky</address>
+					<city>Lexington</city>
+					<state>KY</state>
+					<postal>40506-0107</postal>
+				</cntaddr>
+				<cntvoice>859-257-5500</cntvoice>
+				<cntfax>859-257-1147</cntfax>
+				<cntemail>jerryw@kgs.mm.uky.edu</cntemail>
+				<hours>8 a.m. - 5 p.m., M-F</hours>
+			</cntinfo>
+		</ptcontac>
+		<secinfo>
+			<secclass>Unclassified</secclass>
+		</secinfo>
+		<native Sync="TRUE">Microsoft Windows NT Version 4.0 (Build 1381) Service Pack 6; ESRI ArcCatalog 8.2.0.700</native>
+		<crossref>
+			<citeinfo>
+				<origin>Kentucky Geological Survey</origin>
+				<pubdate>1999</pubdate>
+				<title>Coal Exploration in Kentucky</title>
+				<geoform>vector digital data</geoform>
+				<pubinfo>
+					<pubplace>Lexington, KY</pubplace>
+					<publish>Kentucky Geological Survey</publish>
+				</pubinfo>
+				<onlink>http://kgsweb.uky.edu/download/state/kycoal.ZIP</onlink>
+			</citeinfo>
+		</crossref>
+		<natvform Sync="TRUE">Shapefile</natvform></idinfo>
+	<dataqual>
+		<posacc>
+			<horizpa>
+				<horizpar>Locations verified personally on map or in field with global positioning</horizpar>
+			</horizpa>
+		</posacc>
+		<lineage>
+			<procstep><procdesc Sync="TRUE">Metadata imported.</procdesc><srcused Sync="TRUE">C:\TEMP\Coal_ddh.xml</srcused><date Sync="TRUE">20020531</date><time Sync="TRUE">09413400</time></procstep></lineage>
+	</dataqual>
+	<spdoinfo>
+		<direct Sync="TRUE">Vector</direct>
+		<ptvctinf>
+			<sdtsterm Name="coaldrillholesdd">
+				<sdtstype Sync="TRUE">Entity point</sdtstype>
+				<ptvctcnt Sync="TRUE">8879</ptvctcnt>
+			</sdtsterm>
+			<esriterm Name="coaldrillholesdd"><efeatyp Sync="TRUE">Simple</efeatyp><efeageom Sync="TRUE">Point</efeageom><esritopo Sync="TRUE">FALSE</esritopo><efeacnt Sync="TRUE">8879</efeacnt><spindex Sync="TRUE">FALSE</spindex><linrefer Sync="TRUE">FALSE</linrefer></esriterm></ptvctinf>
+	</spdoinfo>
+	<spref>
+		<horizsys>
+			<geograph>
+				<latres Sync="TRUE">0.000000</latres>
+				<longres Sync="TRUE">0.000000</longres>
+				<geogunit Sync="TRUE">Decimal degrees</geogunit>
+			</geograph>
+			<geodetic>
+				<horizdn Sync="TRUE">North American Datum of 1927</horizdn>
+				<ellips Sync="TRUE">Clarke 1866</ellips>
+				<semiaxis Sync="TRUE">6378206.400000</semiaxis>
+				<denflat Sync="TRUE">294.978698</denflat>
+			</geodetic>
+			<cordsysn><geogcsn Sync="TRUE">GCS_Assumed_Geographic_1</geogcsn></cordsysn></horizsys>
+	</spref>
+	<eainfo>
+		<detailed Name="coaldrillholesdd">
+			<enttyp>
+				<enttypl Sync="TRUE">coaldrillholesdd</enttypl>
+				<enttypt Sync="TRUE">Feature Class</enttypt><enttypc Sync="TRUE">8879</enttypc></enttyp>
+			<attr>
+				<attrlabl Sync="TRUE">FID</attrlabl>
+				<attrdef Sync="TRUE">Internal feature number.</attrdef>
+				<attrdefs Sync="TRUE">ESRI</attrdefs>
+				<attrdomv>
+					<udom Sync="TRUE">Sequential unique whole numbers that are automatically generated.</udom>
+				</attrdomv>
+				<attalias Sync="TRUE">FID</attalias><attrtype Sync="TRUE">OID</attrtype><attwidth Sync="TRUE">4</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl Sync="TRUE">Shape</attrlabl>
+				<attrdef Sync="TRUE">Feature geometry.</attrdef>
+				<attrdefs Sync="TRUE">ESRI</attrdefs>
+				<attrdomv>
+					<udom Sync="TRUE">Coordinates defining the features.</udom>
+				</attrdomv>
+				<attalias Sync="TRUE">Shape</attalias><attrtype Sync="TRUE">Geometry</attrtype><attwidth Sync="TRUE">0</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr>
+			<attr>
+				<attrlabl Sync="TRUE">QUADRANGLE</attrlabl>
+				<attalias Sync="TRUE">QUADRANGLE</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">23</attwidth></attr>
+			<attr>
+				<attrlabl Sync="TRUE">COMPANY</attrlabl>
+				<attalias Sync="TRUE">COMPANY</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">40</attwidth></attr>
+			<attr>
+				<attrlabl Sync="TRUE">DDH</attrlabl>
+				<attalias Sync="TRUE">DDH</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">17</attwidth></attr>
+			<attr>
+				<attrlabl Sync="TRUE">LATITUDE</attrlabl>
+				<attalias Sync="TRUE">LATITUDE</attalias><attrtype Sync="TRUE">Number</attrtype><attwidth Sync="TRUE">9</attwidth><atnumdec Sync="TRUE">6</atnumdec></attr>
+			<attr>
+				<attrlabl Sync="TRUE">LONGITUDE</attrlabl>
+				<attalias Sync="TRUE">LONGITUDE</attalias><attrtype Sync="TRUE">Number</attrtype><attwidth Sync="TRUE">10</attwidth><atnumdec Sync="TRUE">6</atnumdec></attr>
+			<attr>
+				<attrlabl Sync="TRUE">COUNTY</attrlabl>
+				<attalias Sync="TRUE">COUNTY</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">12</attwidth></attr>
+			<attr>
+				<attrlabl Sync="TRUE">SURFACEELE</attrlabl>
+				<attalias Sync="TRUE">SURFACEELE</attalias><attrtype Sync="TRUE">Number</attrtype><attwidth Sync="TRUE">7</attwidth><atnumdec Sync="TRUE">2</atnumdec></attr>
+			<attr>
+				<attrlabl Sync="TRUE">YEARDRILLE</attrlabl>
+				<attalias Sync="TRUE">YEARDRILLE</attalias><attrtype Sync="TRUE">Number</attrtype><attwidth Sync="TRUE">4</attwidth></attr>
+			<attr>
+				<attrlabl Sync="TRUE">DEPTH</attrlabl>
+				<attalias Sync="TRUE">DEPTH</attalias><attrtype Sync="TRUE">Number</attrtype><attwidth Sync="TRUE">8</attwidth><atnumdec Sync="TRUE">3</atnumdec></attr>
+			<attr>
+				<attrlabl Sync="TRUE">UPPERBED</attrlabl>
+				<attalias Sync="TRUE">UPPERBED</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">26</attwidth></attr>
+			<attr><attrlabl Sync="TRUE">LOWERBED</attrlabl><attalias Sync="TRUE">LOWERBED</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">26</attwidth></attr></detailed>
+	</eainfo>
+	<distinfo>
+		<distrib>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>Kentucky Geological Survey</cntorg>
+				</cntorgp>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>Kentucky Geological Survey</address>
+					<address>228 Mining and Mineral Resources Building</address>
+					<address>University of Kentucky</address>
+					<city>Lexington</city>
+					<state>KY</state>
+					<postal>40506-0107</postal>
+				</cntaddr>
+				<cntvoice>859-257-5500</cntvoice>
+				<cntfax>859-257-1147</cntfax>
+			</cntinfo>
+		</distrib>
+		<resdesc>Downloadable Data</resdesc>
+		<stdorder>
+			<digform>
+				<digtinfo>
+					<transize>0.148</transize>
+					<dssize Sync="TRUE">1.879</dssize></digtinfo>
+			</digform>
+		</stdorder>
+	</distinfo>
+	<metainfo>
+		<metd Sync="TRUE">20030129</metd>
+		<metc>
+			<cntinfo>
+				<cntorgp>
+					<cntorg>Kentucky Geological Survey</cntorg>
+					<cntper>Dan Carey</cntper>
+				</cntorgp>
+				<cntaddr>
+					<addrtype>mailing and physical address</addrtype>
+					<address>Kentucky Geological Survey</address>
+					<address>228 Mining and Mineral Resources Building</address>
+					<address>University of Kentucky</address>
+					<city>Lexington</city>
+					<state>KY</state>
+					<postal>40506-0107</postal>
+				</cntaddr>
+				<cntvoice>859-257-5500</cntvoice>
+				<cntfax>859-257-1147</cntfax>
+				<cntemail>carey@kgs.mm.uky.edu</cntemail>
+			</cntinfo>
+		</metc>
+		<metstdn Sync="TRUE">FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+		<metstdv Sync="TRUE">FGDC-STD-001-1998</metstdv>
+		<mettc Sync="TRUE">local time</mettc>
+		<metextns>
+			<onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+			<metprof>ESRI Metadata Profile</metprof>
+		</metextns>
+		<metextns>
+			<onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+			<metprof>ESRI Metadata Profile</metprof>
+		</metextns>
+		<langmeta Sync="TRUE">en</langmeta><metextns><onlink Sync="TRUE">http://www.esri.com/metadata/esriprof80.html</onlink><metprof Sync="TRUE">ESRI Metadata Profile</metprof></metextns></metainfo>
+	<Esri><MetaID>{E04B4BBA-748D-11D6-B65F-00105AABB46A}</MetaID><CreaDate>20030127</CreaDate><CreaTime>15260500</CreaTime><SyncOnce>FALSE</SyncOnce><SyncDate>20030129</SyncDate><SyncTime>17172900</SyncTime><ModDate>20030129</ModDate><ModTime>17172900</ModTime><PublishedDocID>{E04B4BBC-748D-11D6-B65F-00105AABB46A}</PublishedDocID><PublishStatus>Published</PublishStatus><DataProperties><lineage><Process Name="DefineProjection_3" ToolSource="C:\Program Files\ArcGIS\ArcToolbox\Toolboxes\Data Management Tools.tbx\DefineProjection" Date="20050914" Time="171732">DefineProjection C:\GISDATA\coaldrillholesdd.shp GEOGCS['GCS_North_American_1983',DATUM['D_North_American_1983',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]] C:\GISDATA\coaldrillholesdd.shp</Process></lineage></DataProperties></Esri><dataIdInfo><envirDesc Sync="TRUE">Microsoft Windows NT Version 4.0 (Build 1381) Service Pack 6; ESRI ArcCatalog 8.2.0.700</envirDesc><dataLang><languageCode Sync="TRUE" value="en"></languageCode></dataLang><idCitation><resTitle Sync="TRUE">coaldrillholesdd</resTitle><presForm><PresFormCd Sync="TRUE" value="005"></PresFormCd></presForm></idCitation><spatRpType><SpatRepTypCd Sync="TRUE" value="001"></SpatRepTypCd></spatRpType><geoBox esriExtentType="native"><westBL Sync="TRUE">-88.161561</westBL><eastBL Sync="TRUE">-82.063184</eastBL><northBL Sync="TRUE">38.51104</northBL><southBL Sync="TRUE">36.504736</southBL><exTypeCode Sync="TRUE">1</exTypeCode></geoBox><geoBox esriExtentType="decdegrees"><westBL Sync="TRUE">-88.161561</westBL><eastBL Sync="TRUE">-82.063184</eastBL><northBL Sync="TRUE">38.51104</northBL><southBL Sync="TRUE">36.504736</southBL><exTypeCode Sync="TRUE">1</exTypeCode></geoBox></dataIdInfo><mdLang><languageCode Sync="TRUE" value="en"></languageCode></mdLang><mdStanName Sync="TRUE">ISO 19115 Geographic Information - Metadata</mdStanName><mdStanVer Sync="TRUE">DIS_ESRI1.0</mdStanVer><mdChar><CharSetCd Sync="TRUE" value="004"></CharSetCd></mdChar><mdHrLv><ScopeCd Sync="TRUE" value="005"></ScopeCd></mdHrLv><mdHrLvName Sync="TRUE">dataset</mdHrLvName><distInfo><distributor><distorTran><onLineSrc><orDesc Sync="TRUE">002</orDesc><linkage Sync="TRUE">file://\\KGS927\I\MinedOut\imsdata\coaldrillholesdd.shp</linkage><protocol Sync="TRUE">Local Area Network</protocol></onLineSrc><transSize Sync="TRUE">1.879</transSize></distorTran><distorFormat><formatName Sync="TRUE">Shapefile</formatName></distorFormat></distributor></distInfo><refSysInfo><RefSystem><refSysID><identCode Sync="TRUE">GCS_Assumed_Geographic_1</identCode></refSysID></RefSystem></refSysInfo><spatRepInfo><VectSpatRep><topLvl><TopoLevCd Sync="TRUE" value="001"></TopoLevCd></topLvl><geometObjs Name="coaldrillholesdd"><geoObjTyp><GeoObjTypCd Sync="TRUE" value="004"></GeoObjTypCd></geoObjTyp><geoObjCnt Sync="TRUE">8879</geoObjCnt></geometObjs></VectSpatRep></spatRepInfo><mdDateSt Sync="TRUE">20030129</mdDateSt><mdFileID Sync="TRUE">{E04B4BBC-748D-11D6-B65F-00105AABB46A}</mdFileID><Binary><Thumbnail><Data EsriPropertyType="Image" OriginalFileName="thumbnail.jpg">/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB
+AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEB
+AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCACFAMgDASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD+/iii
+igAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKK
+ACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKK4bRvid8OPEXjrxp8MNA8feDdb+JHw
+4sfDGp/ELwFpHiXR9R8Y+BtP8bW19eeD7zxd4ctLybV/DkHiiy0y/vdAfV7S0GrWdrLd2PnW4EhA
+O5ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiuG+J3xB0T4TfD
+jx98UfEtn4j1Dw78OfBviXxxrth4P8M634z8WXukeFdHvNb1G18NeEfDdnqOv+JdcntLKaLS9D0a
+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</Data></Thumbnail></Binary></metadata>

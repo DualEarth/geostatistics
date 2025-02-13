@@ -1,0 +1,3 @@
+<?xml version="1.0"?>
+<!--<!DOCTYPE metadata SYSTEM "http://www.esri.com/metadata/esriprof80.dtd">-->
+<metadata xml:lang="en"><Esri><MetaID>{B29A90F7-1564-4918-AD3B-2720C546CF4F}</MetaID><CreaDate>20050914</CreaDate><CreaTime>17184900</CreaTime><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process Name="DefineProjection_7" ToolSource="C:\Program Files\ArcGIS\ArcToolbox\Toolboxes\Data Management Tools.tbx\DefineProjection" Date="20050914" Time="171849">DefineProjection C:\GISDATA\kentuckykarst_moderate.shp GEOGCS['GCS_North_American_1983',DATUM['D_North_American_1983',SPHEROID['GRS_1980',6378137.0,298.257222101]],PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]] C:\GISDATA\kentuckykarst_moderate.shp</Process></lineage></DataProperties></Esri></metadata>
