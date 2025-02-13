@@ -1,0 +1,154 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+
+\title{Kernel Functions and the Kernel Trick}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction to Kernel Functions}
+Kernel functions are fundamental tools in machine learning and spatial statistics that allow computations in high-dimensional feature spaces without explicitly mapping data points to those spaces. The primary motivation for using kernel functions is to enable linear methods, such as Kriging, to operate in non-linear spaces while maintaining computational efficiency.
+
+\section{Inner Product}
+
+Given two vectors in two-dimensional space, 
+\[
+x = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}, \quad x' = \begin{bmatrix} x'_1 \\ x'_2 \end{bmatrix}
+\]
+their inner product is calculated as:
+
+\[
+x^\top x' = x_1 x'_1 + x_2 x'_2.
+\]
+
+More generally, for vectors in \( n \)-dimensional space,
+
+\[
+x^\top x' = x_1 x'_1 + x_2 x'_2 + \dots + x_n x'_n.
+\]
+
+This operation gives a single number (a scalar) that tells us how much the two vectors point in the same direction. A larger inner product means the vectors are more similar, while an inner product of zero means they are perpendicular (completely unrelated).
+
+
+Suppose we have two vectors:
+
+\[
+x = \begin{bmatrix} 2 \\ 3 \end{bmatrix}, \quad x' = \begin{bmatrix} 4 \\ 1 \end{bmatrix}
+\]
+
+The inner product is computed as:
+
+\[
+x^\top x' = (2 \times 4) + (3 \times 1) = 8 + 3 = 11.
+\]
+
+\section{Definition of a Kernel Function}
+A kernel function \( k(x, x') \) computes the similarity between two points \( x \) and \( x' \) in the input space. Formally, a kernel function satisfies:
+
+\[
+k(x, x') = \phi(x)^\top \phi(x')
+\]
+
+where \( \phi(x) \) is an implicit mapping to a higher-dimensional feature space.
+
+\subsection{Common Kernel Functions}
+Some widely used kernel functions include:
+
+\begin{itemize}
+    \item \textbf{Linear Kernel}: \( k(x, x') = x^\top x' \)
+    \item \textbf{Polynomial Kernel}: \( k(x, x') = (x^\top x' + c)^d \)
+    \item \textbf{Radial Basis Function (RBF) Kernel}: \( k(x, x') = \exp\left(-\frac{\|x - x'\|^2}{2\sigma^2}\right) \)
+    \item \textbf{Gaussian Kernel}: Similar to the RBF kernel, emphasizing smoothness in function approximation.
+\end{itemize}
+
+\section{The Kernel Trick}
+The kernel trick allows us to compute inner products in high-dimensional feature spaces without explicitly performing the transformation \( \phi(x) \). Instead of mapping points to a high-dimensional space and computing dot products explicitly, we use a kernel function to obtain the same result directly in the original space.
+
+\subsection{Example: Polynomial Kernel Calculation}
+Consider two data points in one-dimensional space: \( x = 2 \) and \( x' = 3 \). If we apply a polynomial kernel of degree \( d = 2 \):
+
+\[
+k(x, x') = (x x' + c)^d
+\]
+
+For example, let \( c = 1 \):
+
+\[
+k(2,3) = (2 \cdot 3 + 1)^2 = (6 + 1)^2 = 49.
+\]
+
+This result is equivalent to computing the inner product in a transformed quadratic feature space without explicitly mapping \( x \) and \( x' \) to their higher-order terms.
+
+\section{Applications of the Kernel Trick}
+\begin{itemize}
+    \item \textbf{Support Vector Machines (SVMs)}: Enables classification in high-dimensional feature spaces.
+    \item \textbf{Gaussian Process Regression}: Uses kernel functions to define covariance structures for probabilistic modeling.
+    \item \textbf{Kriging}: Kernel functions describe spatial dependence in geostatistical modeling.
+    \item \textbf{PCA and Dimensionality Reduction}: Kernel PCA extends traditional PCA to non-linear feature extraction.
+\end{itemize}
+
+\section{Recap}
+Kernel methods provide transformations implicitly, enabling non-linear models while maintaining computational efficiency. The kernel trick allows high-dimensional computations without explicitly performing the transformations.
+
+\section{Kernel Functions and Semivariograms}
+
+Kernel functions and semivariograms serve similar roles in quantifying dependencies between data points. 
+
+\subsection{Quantifying Similarity or Dependence}
+\begin{itemize}
+    \item a kernel function \( k(x, x') \) measures the similarity between two points \( x \) and \( x' \). It defines how much influence one observation has on another in function space.
+    \item A semivariogram \( \gamma(h) \) quantifies the spatial dependence of a variable over a distance \( h \), describing how variance changes with increasing separation.
+\end{itemize}
+
+\subsection{Functional Form}
+\textbf{Kernel Function:} Typically, kernels are positive definite and often take forms such as:
+\begin{equation}
+    k(x, x') = \exp \left( -\frac{|x - x'|^2}{2\ell^2} \right),
+\end{equation}
+which ensures that points closer together have higher similarity (like the squared exponential or Gaussian kernel).
+
+\textbf{Semivariogram Model:} The semivariogram is often modeled as:
+\begin{equation}
+    \gamma(h) = C_0 + C \left( 1 - e^{-\frac{h^2}{2\ell^2}} \right),
+\end{equation}
+where \( C_0 \) is the nugget effect, \( C \) is the sill, and \( \ell \) is the range parameter. This structure is similar to the kernel function in GPs.
+
+\subsection{Interpretation in Spatial and Functional Spaces}
+\begin{itemize}
+    \item Kernel Functions define a \textit{covariance structure} in function space. When using a kernel, we assume that function values at nearby points are correlated.
+    \item Semivariogram defines a \textit{variance structure} in spatial fields. When applying kriging, we assume that observations closer together have more similar values.
+\end{itemize}
+
+\subsection{Inversion Between the Two}
+The covariance function in kriging is the direct analog to the kernel function. The semivariogram is related to the covariance function through:
+\begin{equation}
+    \gamma(h) = C(0) - C(h),
+\end{equation}
+meaning the semivariogram represents how dissimilarity grows with distance, while covariance measures similarity.
+
+\subsection{Key Takeaways}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{Feature} & \textbf{Kernel Function (GPs)} & \textbf{Semivariogram (Kriging)} \\
+        \hline
+        Measures & Similarity & Spatial dependence \\
+        \hline
+        Range Parameter & Controls smoothness & Defines spatial correlation \\
+        \hline
+        Role in Model & Defines function prior & Defines spatial interpolation \\
+        \hline
+        Common Forms & Gaussian (RBF), Matern & Exponential, Spherical \\
+        \hline
+    \end{tabular}
+    \caption{Comparison of Kernel Functions and Semivariograms}
+\end{table}
+
+\noindent A \textbf{kernel function in Gaussian processes serves the same purpose as a covariance function in kriging}, while the \textbf{semivariogram models the inverse of covariance}—measuring how variability increases with distance instead of similarity.
+
+\end{document}
